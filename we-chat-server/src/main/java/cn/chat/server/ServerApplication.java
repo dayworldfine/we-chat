@@ -1,6 +1,6 @@
 package cn.chat.server;
 
-import cn.chat.server.socket.NettyServer;
+import cn.chat.server.netty.NettyServer;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 
 import javax.annotation.Resource;
 import java.util.concurrent.Executors;
@@ -25,7 +24,6 @@ import java.util.concurrent.Future;
  **/
 @SpringBootApplication
 @Configuration
-@ImportResource(locations = {"classpath:spring-config.xml"})
 public class ServerApplication extends SpringBootServletInitializer implements CommandLineRunner {
 
     private Logger logger = LoggerFactory.getLogger(ServerApplication.class);

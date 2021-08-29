@@ -1,8 +1,8 @@
 package cn.chat.client.event;
 
 import cn.chat.agreement.protocol.login.LoginRequest;
-import cn.chat.client.infrastructure.util.BeanUtil;
-import cn.chat.client.infrastructure.util.CacheUtil;
+import cn.chat.client.util.BeanUtil;
+import cn.chat.client.util.CacheUtil;
 import cn.chat.ui.view.login.ILoginEvent;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;

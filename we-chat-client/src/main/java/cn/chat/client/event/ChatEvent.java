@@ -6,7 +6,7 @@ import cn.chat.agreement.protocol.msg.MsgGroupRequest;
 import cn.chat.agreement.protocol.msg.MsgRequest;
 import cn.chat.agreement.protocol.talk.DelTalkRequest;
 import cn.chat.agreement.protocol.talk.TalkNoticeRequest;
-import cn.chat.client.infrastructure.util.BeanUtil;
+import cn.chat.client.util.BeanUtil;
 import cn.chat.ui.view.chat.IChatEvent;
 import io.netty.channel.Channel;
 import javafx.scene.control.ListView;

@@ -1,11 +1,11 @@
 package cn.chat.client;
 
 import cn.chat.agreement.protocol.login.ReconnectRequest;
-import cn.chat.client.application.UIService;
+import cn.chat.client.netty.model.ActionBuilder;
 import cn.chat.client.event.ChatEvent;
 import cn.chat.client.event.LoginEvent;
-import cn.chat.client.infrastructure.util.CacheUtil;
-import cn.chat.client.socket.NettyClient;
+import cn.chat.client.util.CacheUtil;
+import cn.chat.client.netty.NettyClient;
 import cn.chat.ui.view.chat.ChatController;
 import cn.chat.ui.view.chat.IChatMethod;
 import cn.chat.ui.view.login.ILoginMethod;
@@ -39,13 +39,13 @@ public class ClientApplication extends javafx.application.Application{
         ILoginMethod login = new LoginController(new LoginEvent(), chat);
         login.doShow();
 
-        UIService uiService = new UIService();
-        uiService.setChat(chat);
-        uiService.setLogin(login);
+        ActionBuilder actionBuilder = new ActionBuilder();
+        actionBuilder.setChat(chat);
+        actionBuilder.setLogin(login);
 
         // 2. 启动socket连接
         logger.info("NettyClient连接服务开始 inetHost：{} inetPort：{}", "127.0.0.1", 7397);
-        NettyClient nettyClient = new NettyClient(uiService);
+        NettyClient nettyClient = new NettyClient(actionBuilder);
         Future<Channel> future = executorService.submit(nettyClient);
         Channel channel = future.get();
         if (null == channel) {

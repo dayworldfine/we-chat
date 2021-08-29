@@ -9,23 +9,29 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <we-chat-agreemen-version>1.0.0-SNAPSHOT</we-chat-agreemen-version>
+        <we-chat-ui-version>1.0.0-SNAPSHOT</we-chat-ui-version>
+        <fastjson-version>1.2.58</fastjson-version>
+    </properties>
+
     <dependencies>
         <!-- 协议定义 -->
         <dependency>
             <groupId>cn.chat</groupId>
             <artifactId>we-chat-agreement</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${we-chat-agreemen-version}</version>
         </dependency>
 
         <dependency>
             <groupId>cn.chat</groupId>
             <artifactId>we-chat-ui</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${we-chat-ui-version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.58</version>
+            <version>${fastjson-version}</version>
         </dependency>
     </dependencies>
 
