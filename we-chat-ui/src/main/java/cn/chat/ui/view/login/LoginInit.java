@@ -4,6 +4,7 @@ import cn.chat.ui.view.UIObject;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -30,6 +31,7 @@ public abstract class LoginInit extends UIObject {
     public Button login_button;       // 登陆按钮
     public TextField userId;          // 用户账户窗口
     public PasswordField userPassword;// 用户密码窗口
+    public Label loginError;// 登录错误文本
 
     LoginInit(ILoginEvent loginEvent) {
         this.loginEvent = loginEvent;
@@ -55,6 +57,7 @@ public abstract class LoginInit extends UIObject {
         login_button = $("login_button", Button.class);
         userId = $("userId", TextField.class);
         userPassword = $("userPassword", PasswordField.class);
+        loginError = $("loginError", Label.class);
     }
 
 }

@@ -28,6 +28,10 @@ public class LoginHandler extends SimpleChannelInboundHandler<LoginResponse> {
         System.out.println("消息内容：" + JSON.toJSONString(msg));
         if (!msg.isSuccess()) {
             System.out.println("登陆失败");
+            Platform.runLater(() ->{
+                actionBuilder.getLogin().doLoginError();
+            });
+
             return;
         }
         Platform.runLater(() -> {

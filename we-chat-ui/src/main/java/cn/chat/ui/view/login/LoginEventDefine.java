@@ -21,6 +21,7 @@ public class LoginEventDefine {
         loginInit.move();
         min();
         quit();
+        loginError();
         doEventLogin();
     }
 
@@ -44,5 +45,10 @@ public class LoginEventDefine {
         loginInit.login_button.setOnAction(event -> {
             loginEvent.doLoginCheck(loginInit.userId.getText(), loginInit.userPassword.getText());
         });
+    }
+
+    //事件：登录错误
+    private void loginError(){
+        loginInit.loginError.setVisible(false);
     }
 }

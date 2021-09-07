@@ -39,6 +39,7 @@ public class LoginController extends LoginInit implements ILoginMethod {
     @Override
     public void doLoginError() {
         // TODO 登陆失败提示
+        loginError.setVisible(true);
     }
 
     @Override

@@ -83,3 +83,8 @@
 #slogan{
     -fx-text-fill: #999999;
 }
+
+.loginError{
+    -fx-text-fill: #ff0000;
+
+}
