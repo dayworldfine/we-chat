@@ -5,7 +5,7 @@
     <insert id="addUserFriendList" parameterType="java.util.List">
         insert into user_friend
         ( userId, userFriendId, createTime, updateTime )  values
-        <foreach collection="list" item="item" index="index" separator=",">
+        <foreach collection="userFriendList" item="item" index="index" separator=",">
             (
                 #{item.userId},
                 #{item.userFriendId},
@@ -21,7 +21,7 @@
 
     <select id="queryUserFriendById" parameterType="cn.chat.server.pojo.entity.UserFriend" resultType="cn.chat.server.pojo.entity.UserFriend">
         select userFriendId from user_friend
-        where userId = #{userId} and userFriendId = #{userFriendId}
+        where userId = #{userFriend.userId} and userFriendId = #{userFriend.userFriendId}
     </select>
 
 </mapper>

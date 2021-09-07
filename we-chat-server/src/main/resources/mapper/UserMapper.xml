@@ -12,7 +12,7 @@
 
     <select id="queryFuzzyUserList" parameterType="java.lang.String" resultType="cn.chat.server.pojo.entity.User">
         select userId, userNickName, userHead
-        from user where userId != #{userId} and (userId like "%"#{searchKey}"%" or userNickName like "%"#{searchKey}"%")
+        from user where userId != #{userId} and (#{userId} like "%"#{searchKey}"%" or userNickName like "%"#{searchKey}"%")
         order by id desc
         limit 10
     </select>
@@ -22,10 +22,10 @@
         from user
         <where>
             <if test="null != userId">
-                and userId = #{userId}
+                and userId = #{channelUserReq.userId}
             </if>
             <if test="null != userNickName">
-                and userNickName like "%"#{userNickName}"%"
+                and userNickName like "%"#{channelUserReq.userNickName}"%"
             </if>
         </where>
     </select>
@@ -35,14 +35,14 @@
         from user
         <where>
             <if test="null != userId">
-                and userId = #{userId}
+                and userId = #{channelUserReq.userId}
             </if>
             <if test="null != userNickName">
-                and userNickName like "%"#{userNickName}"%"
+                and userNickName like "%"#{channelUserReq.userNickName}"%"
             </if>
         </where>
         order by id desc
-        limit #{pageStart},#{pageEnd}
+        limit #{channelUserReq.pageStart},#{channelUserReq.pageEnd}
     </select>
 
 </mapper>

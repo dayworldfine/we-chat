@@ -10,7 +10,7 @@
         INSERT INTO talk_box
         ( userId, talkId, talkType, createTime, updateTime )
         VALUES
-        ( #{userId}, #{talkId}, #{talkType}, now(), now())
+        ( #{talkBox.userId}, #{talkBox.talkId}, #{talkBox.talkType}, now(), now())
     </insert>
 
     <delete id="deleteUserTalk" parameterType="java.lang.String">

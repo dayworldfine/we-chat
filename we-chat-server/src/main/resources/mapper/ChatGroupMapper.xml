@@ -3,7 +3,7 @@
 <mapper namespace="cn.chat.server.mapper.GroupsMapper">
 
     <select id="queryGroupsById" parameterType="java.lang.String" resultType="cn.chat.server.pojo.entity.Groups">
-        SELECT groupId, groupName, groupHead FROM chat_group where groupId = #{groupId}
+        SELECT groupId, groupName, groupHead FROM chat_group where groupId = #{groupsId}
     </select>
 
 </mapper>

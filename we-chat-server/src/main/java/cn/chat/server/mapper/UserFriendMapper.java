@@ -2,6 +2,7 @@ package cn.chat.server.mapper;
 
 import cn.chat.server.pojo.entity.UserFriend;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,10 +16,10 @@ import java.util.List;
 @Mapper
 public interface UserFriendMapper {
 
-    List<String> queryUserFriendIdList(String userId);
+    List<String> queryUserFriendIdList(@Param("userId")String userId);
 
-    UserFriend queryUserFriendById(UserFriend req);
+    UserFriend queryUserFriendById(@Param("userFriend")UserFriend userFriend);
 
-    void addUserFriendList(List<UserFriend> list);
+    void addUserFriendList(@Param("userFriendList")List<UserFriend> userFriendList);
 
 }

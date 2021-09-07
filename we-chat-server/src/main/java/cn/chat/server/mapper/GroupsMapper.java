@@ -2,6 +2,7 @@ package cn.chat.server.mapper;
 
 import cn.chat.server.pojo.entity.Groups;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @ClassName：
@@ -13,6 +14,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface GroupsMapper {
 
-    Groups queryGroupsById(String groupsId);
+    Groups queryGroupsById(@Param("groupsId")String groupsId);
 
 }

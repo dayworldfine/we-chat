@@ -1,6 +1,7 @@
 package cn.chat.server.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,6 +15,6 @@ import java.util.List;
 @Mapper
 public interface UserGroupMapper {
 
-    List<String> queryUserGroupsIdList(String userId);
+    List<String> queryUserGroupsIdList(@Param("userId")String userId);
 
 }

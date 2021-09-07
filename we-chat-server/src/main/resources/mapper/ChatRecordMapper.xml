@@ -6,7 +6,8 @@
         INSERT INTO chat_record
         ( userId, friendId, talkType, msgContent, msgType, msgDate, createTime, updateTime )
         VALUES
-        ( #{userId}, #{friendId}, #{talkType}, #{msgContent}, #{msgType}, #{msgDate}, now(), now() )
+        ( #{chatRecord.userId}, #{chatRecord.friendId}, #{chatRecord.talkType}, #{chatRecord.msgContent},
+         #{chatRecord.msgType}, #{chatRecord.msgDate}, now(), now() )
     </insert>
 
     <select id="queryUserChatRecordList" parameterType="java.lang.String" resultType="cn.chat.server.pojo.entity.ChatRecord">

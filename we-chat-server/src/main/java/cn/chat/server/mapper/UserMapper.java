@@ -17,14 +17,14 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    String queryUserPassword(String userId);
+    String queryUserPassword(@Param("userId")String userId);
 
-    User queryUserById(String userId);
+    User queryUserById(@Param("userId")String userId);
 
     List<User> queryFuzzyUserList(@Param("userId")String userId,@Param("searchKey") String searchKey);
 
-    Long queryChannelUserCount(ChannelUserReq req);
+    Long queryChannelUserCount(@Param("channelUserReq")ChannelUserReq channelUserReq);
 
-    List<User> queryChannelUserList(ChannelUserReq req);
+    List<User> queryChannelUserList(@Param("channelUserReq")ChannelUserReq channelUserReq);
 
 }
