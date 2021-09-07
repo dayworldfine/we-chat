@@ -3,6 +3,7 @@ package cn.chat.server.mapper;
 import cn.chat.server.pojo.model.inet.ChannelUserReq;
 import cn.chat.server.pojo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public interface UserMapper {
 
     User queryUserById(String userId);
 
-    List<User> queryFuzzyUserList(String userId, String searchKey);
+    List<User> queryFuzzyUserList(@Param("userId")String userId,@Param("searchKey") String searchKey);
 
     Long queryChannelUserCount(ChannelUserReq req);
 

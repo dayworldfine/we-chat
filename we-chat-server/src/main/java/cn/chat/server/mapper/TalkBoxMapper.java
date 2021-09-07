@@ -2,6 +2,7 @@ package cn.chat.server.mapper;
 
 import cn.chat.server.pojo.entity.TalkBox;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,14 +16,14 @@ import java.util.List;
 @Mapper
 public interface TalkBoxMapper {
 
-    List<TalkBox> queryTalkBoxList(String userId);
+    List<TalkBox> queryTalkBoxList(@Param("userId")String userId);
 
-    void addTalkBox(TalkBox talkBox);
+    void addTalkBox(@Param("talkBox") TalkBox talkBox);
 
-    void deleteUserTalk(String userId, String talkId);
+    void deleteUserTalk(@Param("userId")String userId, @Param("talkId")String talkId);
 
-    TalkBox queryTalkBox(String userId, String talkId);
+    TalkBox queryTalkBox(@Param("userId") String userId,@Param("talkId")  String talkId);
 
-    List<String> queryTalkBoxGroupsIdList(String userId);
+    List<String> queryTalkBoxGroupsIdList(@Param("userId")String userId);
 
 }

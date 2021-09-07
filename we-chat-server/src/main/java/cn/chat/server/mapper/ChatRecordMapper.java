@@ -16,7 +16,7 @@ import java.util.List;
 @Mapper
 public interface ChatRecordMapper {
 
-    void appendChatRecord(ChatRecord req);
+    void appendChatRecord(@Param("req")ChatRecord req);
 
     List<ChatRecord> queryUserChatRecordList(@Param("talkId")String talkId,@Param("userId") String userId);
 
