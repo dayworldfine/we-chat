@@ -43,7 +43,7 @@ public abstract class FaceInit extends UIObject {
         initStyle(StageStyle.TRANSPARENT);
         setResizable(false);
         // 模态窗口
-        initModality(Modality.APPLICATION_MODAL);
+        initModality(Modality.NONE);
         initOwner(obj);
         // 初始化页面&事件
         obtain();
