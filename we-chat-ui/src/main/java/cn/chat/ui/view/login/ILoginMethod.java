@@ -24,4 +24,9 @@ public interface ILoginMethod {
      */
     void doLoginSuccess();
 
+    /**
+     * 打开注册串口
+     */
+    void doShowRegister();
+
 }

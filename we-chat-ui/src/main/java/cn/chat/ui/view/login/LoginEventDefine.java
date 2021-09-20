@@ -1,5 +1,10 @@
 package cn.chat.ui.view.login;
 
+import cn.chat.ui.view.face.FaceController;
+import cn.chat.ui.view.register.IRegisterMethod;
+import cn.chat.ui.view.register.RegisterController;
+import javafx.scene.control.Button;
+
 /**
  * @ClassName：
  * @Description:
@@ -17,13 +22,23 @@ public class LoginEventDefine {
         this.loginInit = loginInit;
         this.loginEvent = loginEvent;
         this.loginMethod = loginMethod;
-
         loginInit.move();
         min();
         quit();
         loginError();
         doEventLogin();
+        doRegister();
     }
+
+    /**
+     * 事件：注册
+     */
+    private void doRegister() {
+        loginInit.registerButton.setOnAction(event -> {
+            loginMethod.doShowRegister();
+        });
+    }
+
 
     // 事件；最小化
     private void min() {

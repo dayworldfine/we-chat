@@ -6,6 +6,9 @@ import cn.chat.ui.view.chat.IChatMethod;
 import cn.chat.ui.view.chat.element.group_bar_friend.ElementFriendLuckUser;
 import cn.chat.ui.view.login.ILoginMethod;
 import cn.chat.ui.view.login.LoginController;
+import cn.chat.ui.view.register.IRegisterEvent;
+import cn.chat.ui.view.register.IRegisterMethod;
+import cn.chat.ui.view.register.RegisterController;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -107,12 +110,16 @@ public class UiApplication extends javafx.application.Application {
         chat.addFriendUser(false, "1000001", "拎包冲", "02_50");
         chat.addFriendUser(false, "1000002", "铁锤", "03_50");
         chat.addFriendUser(true, "1000003", "小傅哥 | bugstack.cn", "01_50");
+        IRegisterMethod iRegisterMethod = new RegisterController(new IRegisterEvent() {
+            @Override
+            public void doQuit() {
 
-
+            }
+        });
         ILoginMethod login = new LoginController((userId, userPassword) -> {
 
-        }, chat);
-//        login.doShow();
+        }, chat,iRegisterMethod);
+        login.doShow();
     }
 
     public static void main(String[] args) {

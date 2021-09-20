@@ -29,6 +29,7 @@ public abstract class LoginInit extends UIObject {
     public Button login_min;          // 登陆窗口最小化
     public Button login_close;        // 登陆窗口退出
     public Button login_button;       // 登陆按钮
+    public Button registerButton;       // 注册/找回密码按钮
     public TextField userId;          // 用户账户窗口
     public PasswordField userPassword;// 用户密码窗口
     public Label loginError;// 登录错误文本
@@ -58,6 +59,7 @@ public abstract class LoginInit extends UIObject {
         userId = $("userId", TextField.class);
         userPassword = $("userPassword", PasswordField.class);
         loginError = $("loginError", Label.class);
+        registerButton = $("registerButton", Button.class);
     }
 
 }

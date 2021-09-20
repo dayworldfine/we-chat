@@ -2,6 +2,7 @@ package cn.chat.ui.view.login;
 
 
 import cn.chat.ui.view.chat.IChatMethod;
+import cn.chat.ui.view.register.IRegisterMethod;
 
 /**
  * @ClassName：
@@ -13,12 +14,14 @@ import cn.chat.ui.view.chat.IChatMethod;
 public class LoginController extends LoginInit implements ILoginMethod {
 
     private IChatMethod chat;
+    private IRegisterMethod iRegisterMethod;
     private LoginView loginView;
     private LoginEventDefine loginEventDefine;
 
-    public LoginController(ILoginEvent loginEvent, IChatMethod chat) {
+    public LoginController(ILoginEvent loginEvent, IChatMethod chat,IRegisterMethod iRegisterMethod) {
         super(loginEvent);
         this.chat = chat;
+        this.iRegisterMethod = iRegisterMethod;
     }
 
     @Override
@@ -48,6 +51,11 @@ public class LoginController extends LoginInit implements ILoginMethod {
         close();
         // 打开聊天窗口
         chat.doShow();
+    }
+
+    @Override
+    public void doShowRegister() {
+        iRegisterMethod.doShow();
     }
 
 }
