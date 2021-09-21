@@ -2,6 +2,7 @@ package cn.chat.client.netty.model;
 
 import cn.chat.ui.view.chat.IChatMethod;
 import cn.chat.ui.view.login.ILoginMethod;
+import cn.chat.ui.view.register.IRegisterMethod;
 
 /**
  * @ClassName：UIService
@@ -14,6 +15,7 @@ public class ActionBuilder {
 
     private ILoginMethod login;
     private IChatMethod chat;
+    private IRegisterMethod registerMethod;
 
     public ILoginMethod getLogin() {
         return login;
@@ -29,5 +31,13 @@ public class ActionBuilder {
 
     public void setChat(IChatMethod chat) {
         this.chat = chat;
+    }
+
+    public IRegisterMethod getRegisterMethod() {
+        return registerMethod;
+    }
+
+    public void setRegisterMethod(IRegisterMethod registerMethod) {
+        this.registerMethod = registerMethod;
     }
 }

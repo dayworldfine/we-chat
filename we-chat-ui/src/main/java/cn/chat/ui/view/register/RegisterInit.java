@@ -4,9 +4,9 @@ import cn.chat.ui.view.UIObject;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
@@ -32,6 +32,7 @@ public abstract class RegisterInit extends UIObject {
     public Button sendCode;          // 发送验证码
     public PasswordField userPassword;// 用户密码窗口
     public PasswordField userPasswordAgain;// 用户再次输入密码窗口
+    public Label registerError;// 提示框
     public Button registerAccount;        // 注册/找回密码
 
     public RegisterInit(IRegisterEvent iRegisterEvent) {
@@ -61,6 +62,7 @@ public abstract class RegisterInit extends UIObject {
         sendCode = $("sendCode", Button.class);
         userPassword = $("userPassword", PasswordField.class);
         userPasswordAgain = $("userPasswordAgain", PasswordField.class);
+        registerError = $("registerError", Label.class);
         registerAccount = $("registerAccount", Button.class);
     }
 }

@@ -115,6 +115,13 @@ public class UiApplication extends javafx.application.Application {
             public void doQuit() {
 
             }
+
+            @Override
+            public void doSendCode(String phone) {
+
+            }
+
+
         });
         ILoginMethod login = new LoginController((userId, userPassword) -> {
 

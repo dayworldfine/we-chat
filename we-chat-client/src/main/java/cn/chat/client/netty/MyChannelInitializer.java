@@ -33,6 +33,7 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
         channel.pipeline().addLast(new MsgHandler(actionBuilder));
         channel.pipeline().addLast(new SearchFriendHandler(actionBuilder));
         channel.pipeline().addLast(new TalkNoticeHandler(actionBuilder));
+        channel.pipeline().addLast(new SendCodeHandler(actionBuilder));
         //对象传输处理[编码]
         channel.pipeline().addLast(new ObjEncoder());
     }

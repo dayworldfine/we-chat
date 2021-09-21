@@ -25,4 +25,7 @@ public interface Command {
 
     Byte ReconnectRequest = 14;
 
+    Byte SendCodeRequest = 15;
+    Byte SendCodeResponse = 16;
+
 }

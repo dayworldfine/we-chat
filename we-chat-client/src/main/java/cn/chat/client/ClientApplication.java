@@ -39,13 +39,14 @@ public class ClientApplication extends javafx.application.Application{
     public void start(Stage primaryStage) throws Exception {
         // 1. 启动窗口
         IChatMethod chat = new ChatController(new ChatEvent());
-        IRegisterMethod iRegisterMethod = new RegisterController(new RegisterEvent());
-        ILoginMethod login = new LoginController(new LoginEvent(), chat,iRegisterMethod);
+        IRegisterMethod registerMethod = new RegisterController(new RegisterEvent());
+        ILoginMethod login = new LoginController(new LoginEvent(), chat,registerMethod);
         login.doShow();
 
         ActionBuilder actionBuilder = new ActionBuilder();
         actionBuilder.setChat(chat);
         actionBuilder.setLogin(login);
+        actionBuilder.setRegisterMethod(registerMethod);
 
         // 2. 启动socket连接
         logger.info("NettyClient连接服务开始 inetHost：{} inetPort：{}", "127.0.0.1", 7397);

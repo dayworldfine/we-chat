@@ -11,6 +11,8 @@ import cn.chat.agreement.protocol.msg.MsgGroupRequest;
 import cn.chat.agreement.protocol.msg.MsgGroupResponse;
 import cn.chat.agreement.protocol.msg.MsgRequest;
 import cn.chat.agreement.protocol.msg.MsgResponse;
+import cn.chat.agreement.protocol.register.SendCodeRequest;
+import cn.chat.agreement.protocol.register.SendCodeResponse;
 import cn.chat.agreement.protocol.talk.DelTalkRequest;
 import cn.chat.agreement.protocol.talk.TalkNoticeRequest;
 import cn.chat.agreement.protocol.talk.TalkNoticeResponse;
@@ -44,6 +46,8 @@ public abstract class Packet {
         packetType.put(Command.MsgGroupRequest, MsgGroupRequest.class);
         packetType.put(Command.MsgGroupResponse, MsgGroupResponse.class);
         packetType.put(Command.ReconnectRequest, ReconnectRequest.class);
+        packetType.put(Command.SendCodeRequest, SendCodeRequest.class);
+        packetType.put(Command.SendCodeResponse, SendCodeResponse.class);
     }
 
     public static Class<? extends Packet> get(Byte command) {

@@ -13,4 +13,9 @@ public interface IRegisterEvent {
      * 聊天窗口退出操作
      */
     void doQuit();
+
+    /**
+     * 发送短信
+     */
+    void doSendCode(String phone);
 }

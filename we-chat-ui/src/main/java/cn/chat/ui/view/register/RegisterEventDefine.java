@@ -1,5 +1,6 @@
 package cn.chat.ui.view.register;
 
+import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.ReUtil;
 import javafx.scene.control.Button;
 
@@ -35,15 +36,23 @@ public class RegisterEventDefine {
 
     /**
      * 事件：发送验证码
-     * 1.检验手机号是否正常
-     * 2.调用发送验证码
+     * 1.检查是否幂等
+     * 2.检验手机号是否正常
+     * 3.调用发送验证码
      */
     private void sendCode() {
         registerInit.sendCode.setOnAction(event -> {
-            String telRegex = "^(1)\\d{10}$";
-            if (!ReUtil.isMatch(telRegex, registerInit.phone.getText())){
+            /** 如果是数字*/
+            if ( NumberUtil.isNumber(registerInit.sendCode.getText())){
                 return;
             }
+            String telRegex = "^(1)\\d{10}$";
+            if (!ReUtil.isMatch(telRegex, registerInit.phone.getText())){
+                registerInit.registerError.setText("手机号格式不正确");
+                registerInit.registerError.setVisible(true);
+                return;
+            }
+            iRegisterEvent.doSendCode(registerInit.phone.getText());
         });
     }
 
