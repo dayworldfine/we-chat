@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <Pane id="register" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefWidth="400" prefHeight="500" stylesheets="@css/register.css" xmlns="http://javafx.com/javafx/8.0.121"
+      prefWidth="500" prefHeight="500" stylesheets="@css/register.css" xmlns="http://javafx.com/javafx/8.0.121"
       xmlns:fx="http://javafx.com/fxml/1">
     <children>
 
@@ -11,20 +11,34 @@
         <Pane id="operation" prefWidth="540" prefHeight="158">
             <children>
                 <Label id="register_logo" styleClass="register" layoutX="10" layoutY="5" prefWidth="200" prefHeight="15" text="注册/找回密码" style="-fx-text-fill:#666666;"/>
-                <Button id="registerClose" styleClass="close" layoutX="357" prefWidth="43" prefHeight="32"/>
+                <Button id="registerClose" styleClass="close" layoutX="457" prefWidth="43" prefHeight="32"/>
             </children>
         </Pane>
 
         <!-- 头像 -->
-        <Pane id="headImg" layoutX="80" layoutY="200" prefWidth="100" prefHeight="100"/>
+        <Pane id="headImg" layoutX="25" layoutY="100" prefWidth="146" prefHeight="260"/>
 
-        <TextField id="userId" layoutX="200" layoutY="200" prefWidth="250" prefHeight="45" promptText="账号">
+        <TextField id="phone" layoutX="200" layoutY="100" prefWidth="250" prefHeight="50" promptText="手机号">
             <padding>
                 <Insets left="10"/>
             </padding>
         </TextField>
 
-        <PasswordField id="userPassword" layoutX="200" layoutY="255" prefWidth="250" prefHeight="45" promptText="密码">
+        <TextField id="code" layoutX="200" layoutY="175" prefWidth="150" prefHeight="50" promptText="验证码">
+            <padding>
+                <Insets left="10"/>
+            </padding>
+        </TextField>
+
+        <Button id="sendButton" styleClass="sendButton" layoutX="350" layoutY="175" prefWidth="100" prefHeight="50" text="发送验证码"/>
+
+        <PasswordField id="userPassword" layoutX="200" layoutY="255" prefWidth="250" prefHeight="45" promptText="新密码">
+            <padding>
+                <Insets left="10"/>
+            </padding>
+        </PasswordField>
+
+        <PasswordField id="userPassword" layoutX="200" layoutY="315" prefWidth="250" prefHeight="45" promptText="再次输入新密码">
             <padding>
                 <Insets left="10"/>
             </padding>
@@ -36,17 +50,9 @@
             </font>
         </Label>
 
-        <Button id="register_button" styleClass="register_button" layoutX="200" layoutY="345" prefWidth="250" prefHeight="45" text="登 陆"/>
-
-        <Button id="registerButton" styleClass="registerButton" layoutX="80" layoutY="345"  prefWidth="100" prefHeight="45"
+        <Button id="registerButton" styleClass="registerButton" layoutX="200" layoutY="365"  prefWidth="250" prefHeight="45"
                 text="注册/找回密码"/>
 
-        <Label id="slogan" layoutX="5" layoutY="398" prefWidth="400" prefHeight="15"
-               text="v1.0  | 默认地址">
-            <font>
-                <Font size="12"/>
-            </font>
-        </Label>
     </children>
 
 </Pane>

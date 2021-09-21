@@ -1,6 +1,7 @@
 package cn.chat.client;
 
 import cn.chat.agreement.protocol.login.ReconnectRequest;
+import cn.chat.client.event.RegisterEvent;
 import cn.chat.client.netty.model.ActionBuilder;
 import cn.chat.client.event.ChatEvent;
 import cn.chat.client.event.LoginEvent;
@@ -10,6 +11,8 @@ import cn.chat.ui.view.chat.ChatController;
 import cn.chat.ui.view.chat.IChatMethod;
 import cn.chat.ui.view.login.ILoginMethod;
 import cn.chat.ui.view.login.LoginController;
+import cn.chat.ui.view.register.IRegisterMethod;
+import cn.chat.ui.view.register.RegisterController;
 import io.netty.channel.Channel;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -36,7 +39,8 @@ public class ClientApplication extends javafx.application.Application{
     public void start(Stage primaryStage) throws Exception {
         // 1. 启动窗口
         IChatMethod chat = new ChatController(new ChatEvent());
-        ILoginMethod login = new LoginController(new LoginEvent(), chat);
+        IRegisterMethod iRegisterMethod = new RegisterController(new RegisterEvent());
+        ILoginMethod login = new LoginController(new LoginEvent(), chat,iRegisterMethod);
         login.doShow();
 
         ActionBuilder actionBuilder = new ActionBuilder();

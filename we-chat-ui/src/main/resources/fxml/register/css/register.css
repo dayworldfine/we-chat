@@ -10,7 +10,6 @@
    -fx-border-color: rgb(180,180,180);
    -fx-border-width: 1px 1px 0 1px;
    -fx-border-radius: 4px 4px 0 0;
-   -fx-background-image: url("/fxml/login/img/system/show.png");
 }
 
 .close,.close:pressed{
@@ -57,7 +56,8 @@
     -fx-border-width: 2px;
     -fx-border-color: #f1f1f1;
     -fx-border-radius: 4px;
-    -fx-background-image: url("/fxml/login/img/system/head_default_100.png");
+    -fx-background-image: url("/fxml/register/img/12312321.png");
+
 }
 
 .registerButton,.registerButton:pressed{
@@ -80,7 +80,7 @@
     -fx-background-color: #129611;
 }
 
-.register_button,.register_button:pressed{
+.sendButton,.sendButton:pressed{
     -fx-background-size: 43px 43px;
     -fx-background-color: #f5f5f5;
     -fx-cursor: hand;
@@ -89,15 +89,15 @@
     -fx-border-color: #e5e5e5;
     -fx-font-family: "微软雅黑";
     -fx-text-fill: #999999;
-    -fx-font-size: 18px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-alignment: center;
 }
 
-.register_button:hover{
+.sendButton:hover{
     -fx-text-fill: #ffffff;
-    -fx-border-color: #129611;
-    -fx-background-color: #129611;
+    -fx-border-color: #057796;
+    -fx-background-color: #057796;
 }
 
 #slogan{
