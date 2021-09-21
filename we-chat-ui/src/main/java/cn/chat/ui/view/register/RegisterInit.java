@@ -3,6 +3,9 @@ package cn.chat.ui.view.register;
 import cn.chat.ui.view.UIObject;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -22,6 +25,14 @@ public abstract class RegisterInit extends UIObject {
     private static final String RESOURCE_NAME = "/fxml/register/register.fxml";
 
     protected IRegisterEvent iRegisterEvent;
+
+    public Button registerClose;          // 关闭
+    public TextField phone;          // 用户手机号
+    public TextField code;          // 验证码
+    public Button sendCode;          // 发送验证码
+    public PasswordField userPassword;// 用户密码窗口
+    public PasswordField userPasswordAgain;// 用户再次输入密码窗口
+    public Button registerAccount;        // 注册/找回密码
 
     public RegisterInit(IRegisterEvent iRegisterEvent) {
         this.iRegisterEvent = iRegisterEvent;
@@ -44,6 +55,12 @@ public abstract class RegisterInit extends UIObject {
     }
 
     protected void obtain(){
-
+        registerClose = $("registerClose", Button.class);
+        phone = $("phone", TextField.class);
+        code = $("code", TextField.class);
+        sendCode = $("sendCode", Button.class);
+        userPassword = $("userPassword", PasswordField.class);
+        userPasswordAgain = $("userPasswordAgain", PasswordField.class);
+        registerAccount = $("registerAccount", Button.class);
     }
 }

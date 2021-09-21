@@ -16,41 +16,47 @@
         </Pane>
 
         <!-- 头像 -->
-        <Pane id="headImg" layoutX="25" layoutY="100" prefWidth="146" prefHeight="260"/>
+        <Pane id="headImg" layoutX="25" layoutY="100" prefWidth="146" prefHeight="320"/>
 
-        <TextField id="phone" layoutX="200" layoutY="100" prefWidth="250" prefHeight="50" promptText="手机号">
+        <TextField id="phone" layoutX="200" layoutY="100" prefWidth="250" prefHeight="43" promptText="手机号" focusTraversable="">
             <padding>
                 <Insets left="10"/>
             </padding>
         </TextField>
 
-        <TextField id="code" layoutX="200" layoutY="175" prefWidth="150" prefHeight="50" promptText="验证码">
+        <TextField id="code" layoutX="200" layoutY="150" prefWidth="150" prefHeight="43" promptText="验证码">
             <padding>
                 <Insets left="10"/>
             </padding>
         </TextField>
 
-        <Button id="sendButton" styleClass="sendButton" layoutX="350" layoutY="175" prefWidth="100" prefHeight="50" text="发送验证码"/>
+        <Button id="sendCode" styleClass="sendCode" layoutX="350" layoutY="150" prefWidth="100" prefHeight="43" text="发送验证码"/>
 
-        <PasswordField id="userPassword" layoutX="200" layoutY="255" prefWidth="250" prefHeight="45" promptText="新密码">
+        <TextField id="nickName" layoutX="200" layoutY="200" prefWidth="250" prefHeight="43" promptText="昵称">
+            <padding>
+                <Insets left="10"/>
+            </padding>
+        </TextField>
+
+        <PasswordField id="userPassword" layoutX="200" layoutY="250" prefWidth="250" prefHeight="45" promptText="新密码">
             <padding>
                 <Insets left="10"/>
             </padding>
         </PasswordField>
 
-        <PasswordField id="userPassword" layoutX="200" layoutY="315" prefWidth="250" prefHeight="45" promptText="再次输入新密码">
+        <PasswordField id="userPasswordAgain" layoutX="200" layoutY="300" prefWidth="250" prefHeight="45" promptText="再次输入新密码">
             <padding>
                 <Insets left="10"/>
             </padding>
         </PasswordField>
 
-        <Label id="registerError" styleClass="registerError" layoutX="200" layoutY="295" prefWidth="250" prefHeight="45" text="账号密码错误" visible="false">
+        <Label id="registerError" styleClass="registerError" layoutX="200" layoutY="337" prefWidth="250" prefHeight="45" text="异常信息" visible="false">
             <font>
                 <Font size="14"/>
             </font>
         </Label>
 
-        <Button id="registerButton" styleClass="registerButton" layoutX="200" layoutY="365"  prefWidth="250" prefHeight="45"
+        <Button id="registerAccount" styleClass="registerAccount" layoutX="200" layoutY="375"  prefWidth="250" prefHeight="45"
                 text="注册/找回密码"/>
 
     </children>

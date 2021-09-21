@@ -60,7 +60,7 @@
 
 }
 
-.registerButton,.registerButton:pressed{
+.registerAccount,.registerAccount:pressed{
     -fx-background-size: 43px 43px;
     -fx-background-color: #f5f5f5;
     -fx-cursor: hand;
@@ -74,13 +74,13 @@
     -fx-alignment: center;
 }
 
-.registerButton:hover{
+.registerAccount:hover{
     -fx-text-fill: #ffffff;
     -fx-border-color: #129611;
     -fx-background-color: #129611;
 }
 
-.sendButton,.sendButton:pressed{
+.sendCode,.sendCode:pressed{
     -fx-background-size: 43px 43px;
     -fx-background-color: #f5f5f5;
     -fx-cursor: hand;
@@ -94,7 +94,7 @@
     -fx-alignment: center;
 }
 
-.sendButton:hover{
+.sendCode:hover{
     -fx-text-fill: #ffffff;
     -fx-border-color: #057796;
     -fx-background-color: #057796;
@@ -104,7 +104,6 @@
     -fx-text-fill: #999999;
 }
 
-.loginError{
+.registerError{
     -fx-text-fill: #ff0000;
-
 }
