@@ -51,7 +51,7 @@ public class SendCodeHandler extends MyBizHandler<SendCodeRequest> {
         request.putQueryParameter("SignName", SmsUtil.SignName);
         request.putQueryParameter("TemplateCode", SmsUtil.TemplateCode);
         String code = SmsUtil.generalRandomVeriCode();
-        logger.info("code:{}",code);
+//        logger.info("code:{}",code);
         request.putQueryParameter("TemplateParam", "{\"code\":\""+code+"\"}");
         SmsUtil.map.put(account,new SmsCondModel(code,System.currentTimeMillis()));
         try {

@@ -11,7 +11,6 @@
     <update id="updateUser" parameterType="cn.chat.server.pojo.entity.User">
         update `user` set
         userNickName = #{nickName},
-        userHead = #{userHead},
         userPassword = #{password},
         updateTime = now()
         where `userId` = #{userId}

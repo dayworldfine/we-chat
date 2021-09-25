@@ -30,6 +30,6 @@ public interface UserMapper {
     void insertUser(@Param("userId")String userId,@Param("userHead") String userHead,
                     @Param("nickName")String nickName,@Param("password") String password);
 
-    void updateUser(@Param("userId")String userId,@Param("userHead") String userHead,
+    void updateUser(@Param("userId")String userId,
                     @Param("nickName")String nickName,@Param("password") String password);
 }
