@@ -10,7 +10,7 @@
    -fx-border-color: rgb(180,180,180);
    -fx-border-width: 1px 1px 0 1px;
    -fx-border-radius: 4px 4px 0 0;
-   -fx-background-image: url("/fxml/login/img/system/show.png");
+   -fx-background-image: url("/fxml/login/img/title.png");
 }
 
 .close,.close:pressed{
@@ -57,7 +57,7 @@
     -fx-border-width: 2px;
     -fx-border-color: #f1f1f1;
     -fx-border-radius: 4px;
-    -fx-background-image: url("/fxml/login/img/system/head_default_100.png");
+    -fx-background-image: url("/fxml/login/img/logo.png");
 }
 
 .registerButton,.registerButton:pressed{

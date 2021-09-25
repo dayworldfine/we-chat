@@ -24,11 +24,11 @@
             <Button id="bar_friend" layoutX="23" layoutY="160" mnemonicParsing="false" prefHeight="30" prefWidth="30"/>
 
             <!-- 广场 -->
-            <Button id="bar_location" layoutX="23" layoutY="220" mnemonicParsing="false" prefHeight="30"
-                    prefWidth="30"/>
+<!--            <Button id="bar_location" layoutX="23" layoutY="220" mnemonicParsing="false" prefHeight="30"-->
+<!--                    prefWidth="30"/>-->
 
             <!-- 设置 -->
-            <Button id="bar_set" layoutX="28" layoutY="770" mnemonicParsing="false" prefHeight="20" prefWidth="20"/>
+<!--            <Button id="bar_set" layoutX="28" layoutY="770" mnemonicParsing="false" prefHeight="20" prefWidth="20"/>-->
         </Pane>
 
         <!-- 组；group_bar_chat -->
@@ -43,14 +43,14 @@
                 </Pane>
                 <!-- 搜索栏 -->
                 <Pane styleClass="search" prefHeight="80" prefWidth="314">
-                    <children>
-                        <TextField styleClass="searchInput" layoutX="20" layoutY="30" prefHeight="30" prefWidth="240" promptText="搜索">
-                            <padding>
-                                <Insets left="30"/>
-                            </padding>
-                        </TextField>
-                        <Label styleClass="searchAdd" layoutX="270" layoutY="30" prefHeight="30" prefWidth="30"/>
-                    </children>
+<!--                    <children>-->
+<!--                        <TextField styleClass="searchInput" layoutX="20" layoutY="30" prefHeight="30" prefWidth="240" promptText="搜索" disable="false">-->
+<!--                            <padding>-->
+<!--                                <Insets left="30"/>-->
+<!--                            </padding>-->
+<!--                        </TextField>-->
+<!--                        <Label styleClass="searchAdd" layoutX="270" layoutY="30" prefHeight="30" prefWidth="30" disable="false"/>-->
+<!--                    </children>-->
                 </Pane>
                 <!-- 会话栏 -->
                 <Pane id="talk" layoutY="80" prefHeight="738" prefWidth="314">
@@ -65,7 +65,7 @@
                             <children>
                                 <Label id="info_more" layoutX="800" prefWidth="43" prefHeight="43"/>
                                 <Label id="info_name" layoutX="40" layoutY="-8" prefWidth="400" prefHeight="40"
-                                       text="小傅哥 | bugstack.cn"/>
+                                       text=""/>
                             </children>
                         </Pane>
                         <Pane id="info_pane_box" layoutX="1" layoutY="45" prefWidth="850" prefHeight="560" style="-fx-background-color:transparent;-fx-border-width:0;"/>
@@ -105,14 +105,14 @@
                 </Pane>
                 <!-- 搜索栏 -->
                 <Pane styleClass="search" prefHeight="80" prefWidth="314">
-                    <children>
-                        <TextField styleClass="searchInput" layoutX="20" layoutY="30" prefHeight="30" prefWidth="240" promptText="搜索">
-                            <padding>
-                                <Insets left="30"/>
-                            </padding>
-                        </TextField>
-                        <Label styleClass="searchAdd" layoutX="270" layoutY="30" prefHeight="30" prefWidth="30"/>
-                    </children>
+<!--                    <children>-->
+<!--                        <TextField styleClass="searchInput" layoutX="20" layoutY="30" prefHeight="30" prefWidth="240" promptText="搜索">-->
+<!--                            <padding>-->
+<!--                                <Insets left="30"/>-->
+<!--                            </padding>-->
+<!--                        </TextField>-->
+<!--                        <Label styleClass="searchAdd" layoutX="270" layoutY="30" prefHeight="30" prefWidth="30"/>-->
+<!--                    </children>-->
                 </Pane>
                 <!-- 好友栏 -->
                 <Pane id="friend" layoutY="80" prefHeight="738" prefWidth="314">

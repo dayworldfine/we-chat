@@ -32,7 +32,7 @@ public class ChatView {
         //1. 好友列表添加工具方法‘新的朋友’
         initAddFriendLuck();
         //2. 好友列表添加‘公众号’
-        addFriendSubscription();
+//        addFriendSubscription();
         //3. 好友群组框体
         addFriendGroupList();
         //4. 好友框体

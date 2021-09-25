@@ -201,7 +201,12 @@ public class UserRepository implements cn.chat.server.repository.UserRepository 
         if (ObjectUtil.isEmpty(user)){
             userDao.insertUser(msg.getPhone(),"hamster",msg.getNickName(),msg.getPassword());
             /** 还要加入固定群组*/
-            userGroupDao.insertUserGroup(msg.getPhone(),1,DateUtil.date());
+            userGroupDao.insertUserGroup(msg.getPhone(),5307397,DateUtil.date());
+            TalkBox talkBox = new TalkBox();
+            talkBox.setUserId(msg.getPhone());
+            talkBox.setTalkId("5307397");
+            talkBox.setTalkType(1);
+            talkBoxDao.addTalkBox(talkBox);
         }else {
             User u = new User();
             u.setUpdateTime(DateUtil.date());

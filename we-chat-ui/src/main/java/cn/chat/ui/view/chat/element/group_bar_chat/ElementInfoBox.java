@@ -56,7 +56,7 @@ public class ElementInfoBox {
         nikeName.setPrefSize(450, 20);
         nikeName.setLayoutX(75);
         nikeName.setLayoutY(5);
-        nikeName.setText(userNickName); // "小傅哥 | bugstack.cn"
+        nikeName.setText(userNickName);
         nikeName.getStyleClass().add("box_nikeName");
         children.add(nikeName);
 

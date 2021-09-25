@@ -1,5 +1,7 @@
 .search{
     -fx-background-color: #eeebe8;
+    -fx-background-image: url("/fxml/chat/img/chat-top.png");
+    -fx-background-position: center;
 }
 
 .searchInput{
