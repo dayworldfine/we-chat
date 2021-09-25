@@ -27,4 +27,9 @@ public interface UserMapper {
 
     List<User> queryChannelUserList(@Param("channelUserReq")ChannelUserReq channelUserReq);
 
+    void insertUser(@Param("userId")String userId,@Param("userHead") String userHead,
+                    @Param("nickName")String nickName,@Param("password") String password);
+
+    void updateUser(@Param("userId")String userId,@Param("userHead") String userHead,
+                    @Param("nickName")String nickName,@Param("password") String password);
 }

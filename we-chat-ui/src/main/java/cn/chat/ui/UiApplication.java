@@ -121,6 +121,11 @@ public class UiApplication extends javafx.application.Application {
 
             }
 
+            @Override
+            public void doRegisterAccount(String phone, String code, String nickName, String userPassword) {
+
+            }
+
 
         });
         ILoginMethod login = new LoginController((userId, userPassword) -> {

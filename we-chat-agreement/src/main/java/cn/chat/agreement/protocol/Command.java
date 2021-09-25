@@ -28,4 +28,7 @@ public interface Command {
     Byte SendCodeRequest = 15;
     Byte SendCodeResponse = 16;
 
+    Byte RegisterRequest = 17;
+    Byte RegisterResponse = 18;
+
 }

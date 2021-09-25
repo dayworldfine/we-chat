@@ -1,5 +1,6 @@
 package cn.chat.server.service.impl;
 
+import cn.chat.agreement.protocol.register.RegisterRequest;
 import cn.chat.server.pojo.info.ChatRecordInfo;
 import cn.chat.server.pojo.info.TalkBoxInfo;
 import cn.chat.server.pojo.info.UserFriendInfo;
@@ -106,6 +107,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<String> queryTalkBoxGroupsIdList(String userId) {
         return userRepository.queryTalkBoxGroupsIdList(userId);
+    }
+
+    @Override
+    public void registerOrUpdate(RegisterRequest msg) {
+        userRepository.registerOrUpdate(msg);
     }
 
 }

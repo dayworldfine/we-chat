@@ -1,5 +1,6 @@
 package cn.chat.server.service;
 
+import cn.chat.agreement.protocol.register.RegisterRequest;
 import cn.chat.server.pojo.entity.UserFriend;
 import cn.chat.server.pojo.info.ChatRecordInfo;
 import cn.chat.server.pojo.info.TalkBoxInfo;
@@ -127,4 +128,9 @@ public interface UserService {
      */
     List<String> queryTalkBoxGroupsIdList(String userId);
 
+    /**
+     * 注册或修改账号
+     * @param msg
+     */
+    void registerOrUpdate(RegisterRequest msg);
 }

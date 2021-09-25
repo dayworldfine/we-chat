@@ -1,7 +1,9 @@
 package cn.chat.ui.view.register;
 
 import cn.hutool.core.util.NumberUtil;
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.ReUtil;
+import cn.hutool.extra.validation.ValidationUtil;
 import javafx.scene.control.Button;
 
 /**
@@ -32,6 +34,44 @@ public class RegisterEventDefine {
      * 事件:注册账号/找回密码
      */
     private void registerAccount() {
+        registerInit.registerAccount.setOnAction(event -> {
+            /** 清除*/
+            registerInit.registerError.setText("");
+            registerInit.registerError.setVisible(false);
+            /** 验证密码是否一致*/
+            String phone = registerInit.phone.getText();
+            String code = registerInit.code.getText();
+            String nickName = registerInit.nickName.getText();
+            String userPassword = registerInit.userPassword.getText();
+            String userPasswordAgain = registerInit.userPasswordAgain.getText();
+            if (ObjectUtil.isEmpty(phone)){
+                registerInit.registerError.setText("手机号码须填写");
+                registerInit.registerError.setVisible(true);
+                return;
+            }
+            if (ObjectUtil.isEmpty(code)){
+                registerInit.registerError.setText("验证码须填写");
+                registerInit.registerError.setVisible(true);
+                return;
+            }
+            if (ObjectUtil.isEmpty(nickName)){
+                registerInit.registerError.setText("昵称须填写");
+                registerInit.registerError.setVisible(true);
+                return;
+            }
+            if (ObjectUtil.isEmpty(userPassword)){
+                registerInit.registerError.setText("密码须填写");
+                registerInit.registerError.setVisible(true);
+                return;
+            }
+            if (!userPassword.equals(userPasswordAgain)){
+                registerInit.registerError.setText("两次输入的密码不一致");
+                registerInit.registerError.setVisible(true);
+                return;
+            }
+            iRegisterEvent.doRegisterAccount(phone,code,nickName,userPassword);
+
+        });
     }
 
     /**
@@ -42,6 +82,9 @@ public class RegisterEventDefine {
      */
     private void sendCode() {
         registerInit.sendCode.setOnAction(event -> {
+            /** 清除*/
+            registerInit.registerError.setText("");
+            registerInit.registerError.setVisible(false);
             /** 如果是数字*/
             if ( NumberUtil.isNumber(registerInit.sendCode.getText())){
                 return;

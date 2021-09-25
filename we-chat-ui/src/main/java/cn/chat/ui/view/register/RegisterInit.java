@@ -30,6 +30,7 @@ public abstract class RegisterInit extends UIObject {
     public TextField phone;          // 用户手机号
     public TextField code;          // 验证码
     public Button sendCode;          // 发送验证码
+    public TextField nickName;          // 昵称
     public PasswordField userPassword;// 用户密码窗口
     public PasswordField userPasswordAgain;// 用户再次输入密码窗口
     public Label registerError;// 提示框
@@ -60,6 +61,7 @@ public abstract class RegisterInit extends UIObject {
         phone = $("phone", TextField.class);
         code = $("code", TextField.class);
         sendCode = $("sendCode", Button.class);
+        nickName = $("nickName", TextField.class);
         userPassword = $("userPassword", PasswordField.class);
         userPasswordAgain = $("userPasswordAgain", PasswordField.class);
         registerError = $("registerError", Label.class);

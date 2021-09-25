@@ -13,4 +13,19 @@ public interface IRegisterMethod {
      * 打开注册窗口
      */
     void doShow();
+
+    /**
+     * 发送短信倒计时
+     */
+    void countDown(String time);
+
+    /**
+     * 注册成功
+     */
+    void registerSuccess();
+
+    /**
+     * 注册失败
+     */
+    void registerError(String msg);
 }

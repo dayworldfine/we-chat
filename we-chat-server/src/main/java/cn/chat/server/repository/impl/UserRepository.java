@@ -1,5 +1,6 @@
 package cn.chat.server.repository.impl;
 
+import cn.chat.agreement.protocol.register.RegisterRequest;
 import cn.chat.server.common.enums.TalkTypeEnum;
 import cn.chat.server.mapper.*;
 import cn.chat.server.pojo.entity.*;
@@ -9,6 +10,8 @@ import cn.chat.server.pojo.info.UserFriendInfo;
 import cn.chat.server.pojo.info.UserInfo;
 import cn.chat.server.pojo.model.user.GroupsInfo;
 import cn.chat.server.pojo.model.user.LuckUserInfo;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.ObjectUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
@@ -189,6 +192,25 @@ public class UserRepository implements cn.chat.server.repository.UserRepository 
     @Override
     public List<String> queryTalkBoxGroupsIdList(String userId) {
         return talkBoxDao.queryTalkBoxGroupsIdList(userId);
+    }
+
+    @Override
+    public void registerOrUpdate(RegisterRequest msg) {
+        User user = userDao.queryUserById(msg.getPhone());
+        /** 如果为空添加 不为空修改*/
+        if (ObjectUtil.isEmpty(user)){
+            userDao.insertUser(msg.getPhone(),"hamster",msg.getNickName(),msg.getPassword());
+            /** 还要加入固定群组*/
+            userGroupDao.insertUserGroup(msg.getPhone(),1,DateUtil.date());
+        }else {
+            User u = new User();
+            u.setUpdateTime(DateUtil.date());
+            u.setUserHead("hamster");
+            u.setUserNickName(msg.getNickName());
+            u.setUserPassword(msg.getPassword());
+            u.setUserId(msg.getPhone());
+            userDao.updateUser(msg.getPhone(),"hamster",msg.getNickName(),msg.getPassword());
+        }
     }
 
 }

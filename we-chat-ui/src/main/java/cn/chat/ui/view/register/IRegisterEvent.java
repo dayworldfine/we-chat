@@ -18,4 +18,12 @@ public interface IRegisterEvent {
      * 发送短信
      */
     void doSendCode(String phone);
+
+
+
+    /**
+     * 注册/找回密码
+     */
+    void doRegisterAccount(String phone, String code, String nickName, String userPassword);
+
 }

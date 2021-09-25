@@ -1,5 +1,6 @@
 package cn.chat.server.repository;
 
+import cn.chat.agreement.protocol.register.RegisterRequest;
 import cn.chat.server.pojo.entity.UserFriend;
 import cn.chat.server.pojo.info.ChatRecordInfo;
 import cn.chat.server.pojo.info.TalkBoxInfo;
@@ -122,4 +123,9 @@ public interface UserRepository {
      */
     List<String> queryTalkBoxGroupsIdList(String userId);
 
+    /**
+     * 注册或找回
+     * @param msg
+     */
+    void registerOrUpdate(RegisterRequest msg);
 }

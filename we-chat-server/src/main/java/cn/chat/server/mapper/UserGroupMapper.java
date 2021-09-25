@@ -1,5 +1,6 @@
 package cn.chat.server.mapper;
 
+import cn.hutool.core.date.DateTime;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -17,4 +18,5 @@ public interface UserGroupMapper {
 
     List<String> queryUserGroupsIdList(@Param("userId")String userId);
 
+    void insertUserGroup(@Param("userId") String userId, @Param("groupId") int groupId,@Param("date") DateTime date);
 }

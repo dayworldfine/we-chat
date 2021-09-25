@@ -19,6 +19,7 @@
         <mybatis-plus-boot-starter>3.4.3</mybatis-plus-boot-starter>
         <mysql-connector-java>8.0.25</mysql-connector-java>
         <druid.version>1.2.6</druid.version>
+        <aliyun-java-sdk-core>4.5.0</aliyun-java-sdk-core>
     </properties>
 
     <dependencies>
@@ -131,6 +132,19 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty.version}</version>
+        </dependency>
+
+        <!--imm-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>${aliyun-java-sdk-core}</version>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>gson</artifactId>-->
+<!--                    <groupId>com.google.code.gson</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
         </dependency>
     </dependencies>
 

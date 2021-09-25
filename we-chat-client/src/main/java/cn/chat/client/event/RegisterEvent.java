@@ -1,6 +1,7 @@
 package cn.chat.client.event;
 
 import cn.chat.agreement.protocol.login.LoginRequest;
+import cn.chat.agreement.protocol.register.RegisterRequest;
 import cn.chat.agreement.protocol.register.SendCodeRequest;
 import cn.chat.client.util.BeanUtil;
 import cn.chat.client.util.CacheUtil;
@@ -29,6 +30,12 @@ public class RegisterEvent implements IRegisterEvent {
     public void doSendCode(String phone) {
         Channel channel = BeanUtil.getBean("channel", Channel.class);
         channel.writeAndFlush(new SendCodeRequest(phone));
+    }
+
+    @Override
+    public void doRegisterAccount(String phone, String code, String nickName, String userPassword) {
+        Channel channel = BeanUtil.getBean("channel", Channel.class);
+        channel.writeAndFlush(new RegisterRequest(phone,code,nickName,userPassword));
     }
 
 }

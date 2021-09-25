@@ -48,3 +48,11 @@ mybatis-plus:
 logging:
   level:
     cn.chat: debug
+
+aliyun:
+  sms:
+    regionId: cn-hangzhou
+    SignName: Tom
+    TemplateCode: SMS_172887101
+    accessKeyId: LTAIugLGMMRE80v9
+    secret: bLmjLAOpVXUKoPLCOQXbbY27Vh3VPX
